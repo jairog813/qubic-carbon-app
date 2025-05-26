@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function loadItems() {
     const items = JSON.parse(localStorage.getItem('items')) || [];
     const lists = {
@@ -22,22 +23,32 @@ function loadItems() {
     document.getElementById('total-cost').textContent = `Total Cost: $${totalCost}`;
 }
 
+=======
+>>>>>>> 5ed59ef (Initial QUBIC CARBON app commit)
 document.getElementById('item-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
     const itemType = document.getElementById('item-type').value;
     const itemDetails = document.getElementById('item-details').value;
     
+<<<<<<< HEAD
     const items = JSON.parse(localStorage.getItem('items')) || [];
     items.push({ type: itemType, details: itemDetails });
     localStorage.setItem('items', JSON.stringify(items));
     
     loadItems();
+=======
+    const li = document.createElement('li');
+    li.innerHTML = `${itemType.toUpperCase()}: ${itemDetails} <button>Delete</button>`;
+    
+    document.getElementById('item-list').appendChild(li);
+>>>>>>> 5ed59ef (Initial QUBIC CARBON app commit)
     
     document.getElementById('item-details').value = '';
     document.getElementById('item-type').value = '';
 });
 
+<<<<<<< HEAD
 document.addEventListener('click', function(e) {
     if (e.target.tagName === 'BUTTON' && e.target.parentElement.tagName === 'LI') {
         const index = e.target.parentElement.dataset.index;
@@ -49,3 +60,10 @@ document.addEventListener('click', function(e) {
 });
 
 document.addEventListener('DOMContentLoaded', loadItems);
+=======
+document.getElementById('item-list').addEventListener('click', function(e) {
+    if (e.target.tagName === 'BUTTON') {
+        e.target.parentElement.remove();
+    }
+});
+>>>>>>> 5ed59ef (Initial QUBIC CARBON app commit)
