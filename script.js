@@ -73,4 +73,13 @@ document.getElementById('reset-cart').addEventListener('click', function() {
     showMessage('Cart reset successfully!', 'success');
 });
 
-document.addEventListener('DOMContentLoaded', loadItems);
+document.addEventListener('DOMContentLoaded', loadItems);async function fetchFlightPrice() {
+    try {
+        const response = await fetch('http://localhost:3000/api/flight-price');
+        const data = await response.json();
+        if (data.error) throw new Error(data.error);
+        document.getElementById('flight-price').textContent = `${data.route}: $${data.price}`;
+    } catch (error) {
+        document.getElementById('flight-price').textContent = 'Error loading price';
+    }
+}
