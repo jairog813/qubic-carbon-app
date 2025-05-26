@@ -8,12 +8,31 @@
 </head>
 <body>
     <header>
-        <h1>QUBIC CARBON</h1>
+        <div class="logo">QUBIC CARBON</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
+    <main id="home">
         <section id="welcome">
             <h2>Welcome to QUBIC CARBON</h2>
             <p>Purchase airline tickets, gas cards, utilities, and carbon credits to support reforestation and other eco-friendly projects. Offset your carbon footprint while meeting your daily needs!</p>
+        </section>
+        <section id="quick-links">
+            <h3>Quick Purchase Links</h3>
+            <div class="button-group">
+                <a href="https://www.google.com/travel/flights?q=flights+from+new+york+to+london&gl=us" target="_blank" class="link-btn">Search Flights on Google Flights</a>
+                <a href="https://www.shell.us/motorist/shell-card.html" target="_blank" class="link-btn">Get a Shell Gas Card</a>
+                <a href="https://www.exxon.com/en/rewards-program" target="_blank" class="link-btn">Get an Exxon Gas Card</a>
+                <a href="https://bp.com/en_us/united-states/home/business-solutions/fuel-cards.html" target="_blank" class="link-btn">Get a BP Gas Card</a>
+                <a href="https://auth.uber.com/v2/?breeze_return_url=https%3A%2F%2Fwww.uber.com%2F" target="_blank" class="link-btn">Log in to Uber</a>
+                <a href="https://www.amazon.com/ap/signin" target="_blank" class="link-btn">Log in to Amazon</a>
+                <a href="https://www.walmart.com/account/login" target="_blank" class="link-btn">Log in to Walmart</a>
+            </div>
         </section>
         <form id="item-form">
             <select id="item-type" required>
@@ -26,7 +45,8 @@
             <input type="text" id="item-details" placeholder="Enter details (e.g., Flight to Tokyo, $500)" required>
             <button type="submit">Add Item</button>
         </form>
-<<<<<<< HEAD
+        <div id="message" class="message"></div>
+        <button id="reset-cart" class="reset-btn">Reset Cart</button>
         <div id="total-cost">Total Cost: $0</div>
         <h3>Airline Tickets</h3>
         <ul id="ticket-list"></ul>
@@ -36,10 +56,12 @@
         <ul id="utility-list"></ul>
         <h3>Carbon Credits</h3>
         <ul id="carbon-credit-list"></ul>
-=======
-        <ul id="item-list"></ul>
->>>>>>> 5ed59ef (Initial QUBIC CARBON app commit)
     </main>
+    <footer>
+        <p>© 2025 QUBIC CARBON. All rights reserved.</p>
+        <p>Contact us at: <a href="mailto:support@qubiccarbon.com">support@qubiccarbon.com</a></p>
+        <p><a href="https://www.carboncredits.com" target="_blank">Learn More About Carbon Credits</a></p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

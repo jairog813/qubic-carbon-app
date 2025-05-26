@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #e8f5e9;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,128 +15,277 @@ body {
 }
 
 header {
-    margin-bottom: 20px;
+    width: 100%;
+    background-color: #2e7d32;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
-    color: #2e7d32;
-    font-size: 2.5rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+.logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #a5d6a7;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 800px;
 }
 
 #welcome {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #welcome h2 {
     color: #388e3c;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
 #welcome p {
     color: #424242;
-    font-size: 1.1rem;
-    max-width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+#quick-links {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#quick-links h3 {
+    color: #388e3c;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.link-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #81c784;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.link-btn:hover {
+    background-color: #66bb6a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.link-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 #item-form {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     margin-bottom: 20px;
-    width: 100%;
-    max-width: 600px;
+    flex-wrap: wrap;
 }
 
 #item-type, #item-details {
     flex: 1;
-    padding: 10px;
+    padding: 12px;
     font-size: 1rem;
     border: 2px solid #81c784;
-    border-radius: 5px;
+    border-radius: 8px;
     outline: none;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 #item-type:focus, #item-details:focus {
     border-color: #2e7d32;
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 1rem;
     background-color: #4caf50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
     background-color: #388e3c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-<<<<<<< HEAD
-#total-cost {
-    font-size: 1.2rem;
-    color: #2e7d32;
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#message {
     margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    display: none;
+}
+
+.message-success {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+    border: 1px solid #81c784;
+    display: block;
+}
+
+.message-error {
+    background-color: #ffcdd2;
+    color: #d32f2f;
+    border: 1px solid #ef5350;
+    display: block;
+}
+
+#reset-cart {
+    background-color: #d32f2f;
+    margin-bottom: 20px;
+}
+
+#reset-cart:hover {
+    background-color: #b71c1c;
+}
+
+#total-cost {
+    font-size: 1.3rem;
+    color: #2e7d32;
+    margin-bottom: 25px;
+    font-weight: bold;
 }
 
 h3 {
     color: #388e3c;
-    font-size: 1.5rem;
-    margin: 10px 0;
+    font-size: 1.6rem;
+    margin: 15px 0;
 }
 
 #ticket-list, #gas-card-list, #utility-list, #carbon-credit-list {
-=======
-#item-list {
->>>>>>> 5ed59ef (Initial QUBIC CARBON app commit)
     list-style: none;
     width: 100%;
-    max-width: 600px;
 }
 
-<<<<<<< HEAD
 #ticket-list li, #gas-card-list li, #utility-list li, #carbon-credit-list li {
-=======
-#item-list li {
->>>>>>> 5ed59ef (Initial QUBIC CARBON app commit)
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 12px;
+    margin-bottom: 15px;
     background-color: white;
     border: 1px solid #81c784;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s;
 }
 
-<<<<<<< HEAD
+#ticket-list li:hover, #gas-card-list li:hover, #utility-list li:hover, #carbon-credit-list li:hover {
+    transform: translateY(-2px);
+}
+
 #ticket-list li button, #gas-card-list li button, #utility-list li button, #carbon-credit-list li button {
-=======
-#item-list li button {
->>>>>>> 5ed59ef (Initial QUBIC CARBON app commit)
     background-color: #d32f2f;
-    padding: 5px 10px;
+    padding: 8px 15px;
     font-size: 0.9rem;
 }
 
-<<<<<<< HEAD
 #ticket-list li button:hover, #gas-card-list li button:hover, #utility-list li button:hover, #carbon-credit-list li button:hover {
-=======
-#item-list li button:hover {
->>>>>>> 5ed59ef (Initial QUBIC CARBON app commit)
     background-color: #b71c1c;
 }
 
+footer {
+    width: 100%;
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #a5d6a7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: white;
+}
+
 @media (max-width: 600px) {
-    h1 {
-        font-size: 2rem;
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #welcome h2 {
+        font-size: 1.6rem;
+    }
+
+    #welcome p {
+        font-size: 1rem;
+    }
+
+    #quick-links .button-group {
+        flex-direction: column;
+    }
+
+    .link-btn {
+        width: 100%;
+        text-align: center;
     }
 
     #item-form {
@@ -145,5 +294,14 @@ h3 {
 
     #item-type, #item-details, button {
         width: 100%;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 0.9rem;
     }
 }

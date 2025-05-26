@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function loadItems() {
     const items = JSON.parse(localStorage.getItem('items')) || [];
     const lists = {
@@ -23,32 +22,41 @@ function loadItems() {
     document.getElementById('total-cost').textContent = `Total Cost: $${totalCost}`;
 }
 
-=======
->>>>>>> 5ed59ef (Initial QUBIC CARBON app commit)
+function showMessage(text, type) {
+    const messageDiv = document.getElementById('message');
+    messageDiv.textContent = text;
+    messageDiv.className = 'message';
+    messageDiv.classList.add(type === 'success' ? 'message-success' : 'message-error');
+    setTimeout(() => {
+        messageDiv.classList.remove('message-success', 'message-error');
+        messageDiv.textContent = '';
+    }, 3000);
+}
+
 document.getElementById('item-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
     const itemType = document.getElementById('item-type').value;
     const itemDetails = document.getElementById('item-details').value;
     
-<<<<<<< HEAD
+    // Validate item details format (must include a cost like $500)
+    const costMatch = itemDetails.match(/\$(\d+)/);
+    if (!costMatch) {
+        showMessage('Please include a cost in the format "$500" (e.g., "Flight to Tokyo, $500").', 'error');
+        return;
+    }
+    
     const items = JSON.parse(localStorage.getItem('items')) || [];
     items.push({ type: itemType, details: itemDetails });
     localStorage.setItem('items', JSON.stringify(items));
     
     loadItems();
-=======
-    const li = document.createElement('li');
-    li.innerHTML = `${itemType.toUpperCase()}: ${itemDetails} <button>Delete</button>`;
-    
-    document.getElementById('item-list').appendChild(li);
->>>>>>> 5ed59ef (Initial QUBIC CARBON app commit)
     
     document.getElementById('item-details').value = '';
     document.getElementById('item-type').value = '';
+    showMessage('Item added successfully!', 'success');
 });
 
-<<<<<<< HEAD
 document.addEventListener('click', function(e) {
     if (e.target.tagName === 'BUTTON' && e.target.parentElement.tagName === 'LI') {
         const index = e.target.parentElement.dataset.index;
@@ -59,11 +67,10 @@ document.addEventListener('click', function(e) {
     }
 });
 
-document.addEventListener('DOMContentLoaded', loadItems);
-=======
-document.getElementById('item-list').addEventListener('click', function(e) {
-    if (e.target.tagName === 'BUTTON') {
-        e.target.parentElement.remove();
-    }
+document.getElementById('reset-cart').addEventListener('click', function() {
+    localStorage.removeItem('items');
+    loadItems();
+    showMessage('Cart reset successfully!', 'success');
 });
->>>>>>> 5ed59ef (Initial QUBIC CARBON app commit)
+
+document.addEventListener('DOMContentLoaded', loadItems);
