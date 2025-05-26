@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUBIC CARBON</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>QUBIC CARBON</h1>
+    </header>
+    <main>
+        <section id="welcome">
+            <h2>Welcome to QUBIC CARBON</h2>
+            <p>Purchase airline tickets, gas cards, utilities, and carbon credits to support reforestation and other eco-friendly projects. Offset your carbon footprint while meeting your daily needs!</p>
+        </section>
+        <form id="item-form">
+            <select id="item-type" required>
+                <option value="" disabled selected>Select Item Type</option>
+                <option value="ticket">Airline Ticket</option>
+                <option value="gas-card">Gas Card</option>
+                <option value="utility">Utility Payment</option>
+                <option value="carbon-credit">Carbon Credit</option>
+            </select>
+            <input type="text" id="item-details" placeholder="Enter details (e.g., Flight to Tokyo, $500)" required>
+            <button type="submit">Add Item</button>
+        </form>
+        <div id="total-cost">Total Cost: $0</div>
+        <h3>Airline Tickets</h3>
+        <ul id="ticket-list"></ul>
+        <h3>Gas Cards</h3>
+        <ul id="gas-card-list"></ul>
+        <h3>Utilities</h3>
+        <ul id="utility-list"></ul>
+        <h3>Carbon Credits</h3>
+        <ul id="carbon-credit-list"></ul>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
